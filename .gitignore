@@ -7,3 +7,6 @@ node_modules/
 .DS_Store
 # never commit recorded Qloo responses
 recordings/
+
+# Local copies of Qloo documentation pages (reference only, not ours to redistribute)
+docs/
