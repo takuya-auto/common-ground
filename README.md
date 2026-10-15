@@ -142,7 +142,7 @@ wrangler deploy
 | `QLOO_BASE_URL` | var | Default `https://hackathon.api.qloo.com`. |
 | `LLM_MODEL` | var | Workers AI model with function calling. Default `@cf/meta/llama-3.3-70b-instruct-fp8-fast`. |
 | `LLM_MODE` | var | `auto` (default) or `off`. |
-| `LLM_DAILY_CAP` | var | Hard cap on LLM calls per UTC day (default 150). |
+| `LLM_DAILY_CAP` | var | Hard cap on LLM calls per UTC day (default 60 — keeps a Llama-3.3-70B workload inside the Workers AI free daily allocation of 10,000 neurons). |
 | `LLM_PER_REQUEST_CAP` | var | Max LLM calls one request may make (default 12). |
 
 Bindings: `AI` (Workers AI), `CAP_KV` (KV, for the cap counter), `ASSETS`

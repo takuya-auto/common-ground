@@ -21,7 +21,7 @@
     "QLOO_BASE_URL": "https://hackathon.api.qloo.com",
     "LLM_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
     // Hard cap on LLM invocations per UTC day. Above this the agent runs its deterministic plan.
-    "LLM_DAILY_CAP": "150",
+    "LLM_DAILY_CAP": "60",
     // Max LLM invocations a single /api/plan request may make (loop + narration + comparison).
     "LLM_PER_REQUEST_CAP": "12",
     // "auto" = use the LLM when available and under cap; "off" = never call the LLM.
