@@ -1,0 +1,31 @@
+{
+  "_note": "SYNTHETIC tag catalog for mock /v2/tags. URNs mimic Qloo's documented format; the mapping is ours. Not Qloo data.",
+  "tags": [
+    { "id": "urn:tag:keyword:place:vegetarian_options", "name": "Vegetarian options", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["vegetarian", "veggie"] },
+    { "id": "urn:tag:genre:place:restaurant:vegetarian", "name": "Vegetarian restaurant", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["vegetarian"] },
+    { "id": "urn:tag:keyword:place:vegan_options", "name": "Vegan options", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["vegan", "plant-based"] },
+    { "id": "urn:tag:genre:place:restaurant:vegan", "name": "Vegan restaurant", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["vegan"] },
+    { "id": "urn:tag:keyword:place:gluten_free_options", "name": "Gluten-free options", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["gluten free", "gluten-free", "coeliac", "celiac"] },
+    { "id": "urn:tag:keyword:place:halal", "name": "Halal", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["halal"] },
+    { "id": "urn:tag:keyword:place:wheelchair_accessible", "name": "Wheelchair accessible", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["wheelchair", "accessible", "step-free", "accessibility"] },
+    { "id": "urn:tag:keyword:place:family_friendly", "name": "Family friendly", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["family", "kids", "children"] },
+    { "id": "urn:tag:keyword:place:kid_friendly", "name": "Kid friendly", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["kids", "children", "kid"] },
+    { "id": "urn:tag:keyword:place:late_night", "name": "Late night", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["late", "late night", "after midnight"] },
+    { "id": "urn:tag:keyword:place:quiet", "name": "Quiet", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["quiet", "calm", "conversation"] },
+    { "id": "urn:tag:keyword:place:lively", "name": "Lively", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["lively", "buzzy", "loud"] },
+    { "id": "urn:tag:keyword:place:romantic", "name": "Romantic", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["romantic", "date"] },
+    { "id": "urn:tag:keyword:place:rooftop", "name": "Rooftop", "type": "urn:tag:keyword:place", "parents": ["urn:entity:place"], "aliases": ["rooftop", "view"] },
+    { "id": "urn:tag:genre:place:restaurant", "name": "Restaurant", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["restaurant", "dinner", "food"] },
+    { "id": "urn:tag:genre:place:bar", "name": "Bar", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["bar", "drinks", "pub"] },
+    { "id": "urn:tag:genre:place:night_club", "name": "Night club", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["club", "nightclub", "dancing"] },
+    { "id": "urn:tag:genre:place:live_music_venue", "name": "Live music venue", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["live music", "gig", "concert"] },
+    { "id": "urn:tag:genre:place:bar:karaoke", "name": "Karaoke", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["karaoke", "singing"] },
+    { "id": "urn:tag:genre:place:bar:cocktail_bar", "name": "Cocktail bar", "type": "urn:tag:genre:place", "parents": ["urn:entity:place"], "aliases": ["cocktail", "cocktails"] },
+    { "id": "urn:tag:genre:media:family", "name": "Family", "type": "urn:tag:genre:media", "parents": ["urn:entity:movie", "urn:entity:tv_show"], "aliases": ["family", "kids", "children"] },
+    { "id": "urn:tag:genre:media:horror", "name": "Horror", "type": "urn:tag:genre:media", "parents": ["urn:entity:movie", "urn:entity:tv_show"], "aliases": ["horror", "scary"] },
+    { "id": "urn:tag:genre:media:comedy", "name": "Comedy", "type": "urn:tag:genre:media", "parents": ["urn:entity:movie", "urn:entity:tv_show"], "aliases": ["comedy", "funny"] },
+    { "id": "urn:tag:genre:destination:family", "name": "Family destination", "type": "urn:tag:genre:destination", "parents": ["urn:entity:destination"], "aliases": ["family", "kids"] },
+    { "id": "urn:tag:genre:destination:wellness", "name": "Wellness", "type": "urn:tag:genre:destination", "parents": ["urn:entity:destination"], "aliases": ["relax", "spa", "wellness", "quiet"] },
+    { "id": "urn:tag:genre:destination:hiking", "name": "Hiking", "type": "urn:tag:genre:destination", "parents": ["urn:entity:destination"], "aliases": ["hiking", "outdoors", "walk"] }
+  ]
+}

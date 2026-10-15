@@ -1,0 +1,15 @@
+{
+  "name": "common-ground",
+  "version": "0.1.0",
+  "description": "Common Ground - a group taste mediator agent grounded in Qloo's taste graph (Qloo Agentic Hackathon 2026)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test \"test/**/*.test.js\"",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {}
+}

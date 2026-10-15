@@ -1,0 +1,23 @@
+{
+  "_note": "SYNTHETIC metadata. Real place names with OUR OWN tags, for mock weekend-trip suggestions. Not Qloo data.",
+  "entities": [
+    { "name": "Lisbon", "country": "PT", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:food_scene", "urn:tag:genre:destination:history", "urn:tag:genre:destination:nightlife"] },
+    { "name": "Kyoto", "country": "JP", "tags": ["urn:tag:genre:destination:history", "urn:tag:genre:destination:wellness", "urn:tag:genre:destination:food_scene", "urn:tag:keyword:qloo:minimalist"] },
+    { "name": "Lake District", "country": "GB", "tags": ["urn:tag:genre:destination:hiking", "urn:tag:genre:destination:mountains", "urn:tag:genre:destination:wellness", "urn:tag:keyword:qloo:cozy"] },
+    { "name": "Berlin", "country": "DE", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:nightlife", "urn:tag:genre:destination:art", "urn:tag:genre:music:electronic"] },
+    { "name": "Copenhagen", "country": "DK", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:food_scene", "urn:tag:genre:destination:art", "urn:tag:keyword:qloo:minimalist", "urn:tag:keyword:qloo:sustainable"] },
+    { "name": "Amalfi Coast", "country": "IT", "tags": ["urn:tag:genre:destination:beach", "urn:tag:genre:destination:food_scene", "urn:tag:keyword:place:romantic", "urn:tag:keyword:qloo:luxury"] },
+    { "name": "Banff", "country": "CA", "tags": ["urn:tag:genre:destination:mountains", "urn:tag:genre:destination:hiking", "urn:tag:genre:destination:family", "urn:tag:keyword:qloo:outdoors"] },
+    { "name": "Mexico City", "country": "MX", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:food_scene", "urn:tag:genre:destination:art", "urn:tag:genre:destination:history", "urn:tag:genre:destination:nightlife"] },
+    { "name": "Reykjavik", "country": "IS", "tags": ["urn:tag:genre:destination:wellness", "urn:tag:genre:destination:hiking", "urn:tag:keyword:qloo:outdoors", "urn:tag:genre:music:indie_rock"] },
+    { "name": "New Orleans", "country": "US", "tags": ["urn:tag:genre:destination:nightlife", "urn:tag:genre:destination:food_scene", "urn:tag:genre:music:jazz", "urn:tag:genre:destination:history"] },
+    { "name": "Hakone", "country": "JP", "tags": ["urn:tag:genre:destination:wellness", "urn:tag:genre:destination:mountains", "urn:tag:keyword:place:quiet", "urn:tag:genre:destination:art"] },
+    { "name": "Barcelona", "country": "ES", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:beach", "urn:tag:genre:destination:nightlife", "urn:tag:genre:destination:art", "urn:tag:genre:destination:food_scene"] },
+    { "name": "Orlando", "country": "US", "tags": ["urn:tag:genre:destination:family", "urn:tag:keyword:qloo:blockbuster", "urn:tag:genre:media:family"] },
+    { "name": "Edinburgh", "country": "GB", "tags": ["urn:tag:genre:destination:history", "urn:tag:genre:destination:city_break", "urn:tag:keyword:qloo:literary", "urn:tag:keyword:qloo:cozy"] },
+    { "name": "Bali", "country": "ID", "tags": ["urn:tag:genre:destination:beach", "urn:tag:genre:destination:wellness", "urn:tag:genre:destination:nightlife", "urn:tag:keyword:qloo:outdoors"] },
+    { "name": "Marrakech", "country": "MA", "tags": ["urn:tag:genre:destination:history", "urn:tag:genre:destination:food_scene", "urn:tag:genre:destination:art", "urn:tag:genre:place:restaurant:middle_eastern"] },
+    { "name": "Seoul", "country": "KR", "tags": ["urn:tag:genre:destination:city_break", "urn:tag:genre:destination:nightlife", "urn:tag:genre:destination:food_scene", "urn:tag:genre:music:k_pop", "urn:tag:keyword:qloo:tech"] },
+    { "name": "Yosemite", "country": "US", "tags": ["urn:tag:genre:destination:hiking", "urn:tag:genre:destination:mountains", "urn:tag:keyword:qloo:outdoors", "urn:tag:genre:destination:family"] }
+  ]
+}

@@ -1,0 +1,6 @@
+# Copy to .dev.vars for local development (never commit .dev.vars).
+# Leave QLOO_API_KEY empty/unset to run in MOCK mode (synthetic fixtures).
+QLOO_API_KEY=
+# "auto" (default) calls Workers AI when under the daily cap; "off" disables all LLM calls.
+LLM_MODE=auto
+LLM_DAILY_CAP=150

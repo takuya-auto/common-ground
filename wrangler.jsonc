@@ -1,0 +1,31 @@
+{
+  // Common Ground - single Worker: static UI from ./public + /api/* handled in src/worker.js
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "common-ground",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-06-01",
+  "account_id": "164d3112a698247ad4dd187b68528aee",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // Workers AI (free allocation). The model must support function calling.
+  "ai": { "binding": "AI", "remote": true },
+  // KV used only for the hard daily LLM-call cap. In `wrangler dev` this is simulated locally.
+  // Before deploying: `wrangler kv namespace create CAP_KV` and paste the id here.
+  "kv_namespaces": [
+    { "binding": "CAP_KV", "id": "00000000000000000000000000000000" }
+  ],
+  "vars": {
+    "QLOO_BASE_URL": "https://hackathon.api.qloo.com",
+    "LLM_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    // Hard cap on LLM invocations per UTC day. Above this the agent runs its deterministic plan.
+    "LLM_DAILY_CAP": "150",
+    // Max LLM invocations a single /api/plan request may make (loop + narration + comparison).
+    "LLM_PER_REQUEST_CAP": "12",
+    // "auto" = use the LLM when available and under cap; "off" = never call the LLM.
+    "LLM_MODE": "auto"
+  },
+  "observability": { "enabled": true }
+}

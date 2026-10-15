@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.log
+.DS_Store
+# never commit recorded Qloo responses
+recordings/

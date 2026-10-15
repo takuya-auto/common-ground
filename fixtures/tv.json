@@ -1,0 +1,23 @@
+{
+  "_note": "SYNTHETIC metadata. Well-known shows with OUR OWN tags for mock TV nights. Not Qloo data.",
+  "entities": [
+    { "name": "Severance", "year": 2022, "content_rating": "TV-MA", "rating": 8.7, "tags": ["urn:tag:genre:media:science_fiction", "urn:tag:genre:media:mystery", "urn:tag:genre:media:drama", "urn:tag:keyword:qloo:slow_burn", "urn:tag:keyword:qloo:minimalist"] },
+    { "name": "Abbott Elementary", "year": 2021, "content_rating": "TV-PG", "rating": 8.2, "tags": ["urn:tag:genre:media:comedy", "urn:tag:genre:media:family", "urn:tag:keyword:qloo:feel_good"] },
+    { "name": "The Bear", "year": 2022, "content_rating": "TV-MA", "rating": 8.6, "tags": ["urn:tag:genre:media:drama", "urn:tag:genre:media:comedy", "urn:tag:genre:place:restaurant:american", "urn:tag:genre:music:indie_rock"] },
+    { "name": "Only Murders in the Building", "year": 2021, "content_rating": "TV-14", "rating": 8.1, "tags": ["urn:tag:genre:media:mystery", "urn:tag:genre:media:comedy", "urn:tag:genre:media:crime", "urn:tag:keyword:qloo:feel_good"] },
+    { "name": "Our Planet", "year": 2019, "content_rating": "TV-G", "rating": 9.3, "tags": ["urn:tag:genre:media:documentary", "urn:tag:keyword:qloo:outdoors", "urn:tag:keyword:qloo:visually_stunning", "urn:tag:genre:media:family"] },
+    { "name": "Mindhunter", "year": 2017, "content_rating": "TV-MA", "rating": 8.6, "tags": ["urn:tag:genre:media:crime", "urn:tag:genre:media:thriller", "urn:tag:genre:media:drama", "urn:tag:keyword:qloo:slow_burn"] },
+    { "name": "Schitt's Creek", "year": 2015, "content_rating": "TV-14", "rating": 8.5, "tags": ["urn:tag:genre:media:comedy", "urn:tag:keyword:qloo:feel_good", "urn:tag:keyword:qloo:cozy"] },
+    { "name": "Arcane", "year": 2021, "content_rating": "TV-14", "rating": 9.0, "tags": ["urn:tag:genre:media:animation", "urn:tag:genre:media:fantasy", "urn:tag:genre:media:action", "urn:tag:keyword:qloo:visually_stunning"] },
+    { "name": "Shogun", "year": 2024, "content_rating": "TV-MA", "rating": 8.7, "tags": ["urn:tag:genre:media:drama", "urn:tag:genre:media:adventure", "urn:tag:keyword:qloo:visually_stunning", "urn:tag:keyword:qloo:literary"] },
+    { "name": "Taskmaster", "year": 2015, "content_rating": "TV-14", "rating": 8.6, "tags": ["urn:tag:genre:media:comedy", "urn:tag:keyword:qloo:feel_good", "urn:tag:keyword:qloo:cult_classic"] },
+    { "name": "Chef's Table", "year": 2015, "content_rating": "TV-MA", "rating": 8.5, "tags": ["urn:tag:genre:media:documentary", "urn:tag:genre:place:restaurant:fine_dining", "urn:tag:keyword:qloo:visually_stunning", "urn:tag:keyword:qloo:luxury"] },
+    { "name": "Dark", "year": 2017, "content_rating": "TV-MA", "rating": 8.7, "tags": ["urn:tag:genre:media:science_fiction", "urn:tag:genre:media:mystery", "urn:tag:genre:media:thriller", "urn:tag:keyword:qloo:slow_burn"] },
+    { "name": "Bluey", "year": 2018, "content_rating": "TV-Y", "rating": 9.4, "tags": ["urn:tag:genre:media:animation", "urn:tag:genre:media:family", "urn:tag:keyword:qloo:feel_good", "urn:tag:keyword:qloo:cozy"] },
+    { "name": "Slow Horses", "year": 2022, "content_rating": "TV-MA", "rating": 8.2, "tags": ["urn:tag:genre:media:thriller", "urn:tag:genre:media:comedy", "urn:tag:genre:media:crime", "urn:tag:keyword:qloo:literary"] },
+    { "name": "Reservation Dogs", "year": 2021, "content_rating": "TV-MA", "rating": 8.1, "tags": ["urn:tag:genre:media:comedy", "urn:tag:genre:media:drama", "urn:tag:keyword:qloo:arthouse", "urn:tag:keyword:qloo:feel_good"] },
+    { "name": "Beef", "year": 2023, "content_rating": "TV-MA", "rating": 8.0, "tags": ["urn:tag:genre:media:drama", "urn:tag:genre:media:comedy", "urn:tag:genre:media:thriller", "urn:tag:keyword:qloo:arthouse"] },
+    { "name": "Formula 1: Drive to Survive", "year": 2019, "content_rating": "TV-MA", "rating": 8.5, "tags": ["urn:tag:genre:media:documentary", "urn:tag:genre:media:action", "urn:tag:keyword:qloo:blockbuster", "urn:tag:keyword:qloo:luxury"] },
+    { "name": "Derry Girls", "year": 2018, "content_rating": "TV-MA", "rating": 8.4, "tags": ["urn:tag:genre:media:comedy", "urn:tag:keyword:qloo:feel_good", "urn:tag:genre:music:pop", "urn:tag:keyword:qloo:cult_classic"] }
+  ]
+}
