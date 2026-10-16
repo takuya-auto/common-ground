@@ -130,7 +130,7 @@ async function autopilotComplete({ state, tools }) {
 // LLM tool-calling loop.
 async function runLlmLoop({ state, tools, llm, llmInfo }) {
   const system = `You are Common Ground, an agent that finds the fairest shared choice for a group using the Qloo taste graph.
-Procedure: 1) resolve_favourites (add type hints for ambiguous names, e.g. "Dune" could be urn:entity:movie or urn:entity:book), 2) resolve_constraints, 3) find_candidates, 4) score_pool, 5) rank, 6) finish with a one-sentence summary.
+Procedure: 1) resolve_favourites (add type hints for ambiguous names, e.g. "Dune" could be urn:entity:movie or urn:entity:book; when a title exists in the occasion's own type, hint that type, because Qloo scores same-type signals most reliably), 2) resolve_constraints, 3) find_candidates, 4) score_pool, 5) rank, 6) finish with a one-sentence summary.
 If find_candidates reports a poolSize below ${MIN_POOL}, call relax (budget first, then constraint_tags) and find_candidates again.
 Always call exactly one tool per turn. Do not answer in prose until finish.`;
   const user = `Group request:\n${JSON.stringify(briefRequest(state), null, 0)}`;

@@ -250,11 +250,28 @@ export function createTools({ qloo, state }) {
             explainability: true,
             purpose: `score ${ids.length} candidates for ${m.name}`,
           });
-          for (const e of res.entities) {
-            if (typeof e.affinity === 'number') state.affinities[m.id][e.id] = e.affinity;
+          let entities = res.entities;
+          // Qloo silently drops signal entities it cannot use for this
+          // filter.type (e.g. some books when scoring movies): candidates come
+          // back without an affinity. Re-resolve that member's favourites as
+          // the occasion's own type and score once more.
+          if (!entities.some((e) => typeof e.affinity === 'number') && (await retypeFavourites(m))) {
+            const retry = await qloo.insights(occ.type, {
+              signalEntities: memberSignalIds(m),
+              resultsEntities: ids,
+              take: Math.min(MAX_POOL, ids.length),
+              explainability: true,
+              purpose: `re-score ${ids.length} candidates for ${m.name} (favourites as ${occ.type.split(':').pop()})`,
+            });
+            entities = retry.entities;
+          }
+          let scored = 0;
+          for (const e of entities) {
+            if (typeof e.affinity === 'number') { state.affinities[m.id][e.id] = e.affinity; scored++; }
             state.drivers[m.id][e.id] = parseDrivers(e.explainability, m);
           }
-          report[m.name] = { scored: res.entities.length, of: ids.length };
+          if (!scored) state.warnings.push(`Qloo could not score candidates for ${m.name}; their satisfaction is shown as unknown.`);
+          report[m.name] = { scored, of: ids.length };
         } catch (err) {
           state.warnings.push(`Scoring for ${m.name} failed: ${err.message}`);
           report[m.name] = { scored: 0, of: ids.length, error: err.message };
@@ -262,6 +279,28 @@ export function createTools({ qloo, state }) {
       }
       return report;
     });
+  }
+
+  /** Swap favourites to same-type entities (alternatives first, then /search). Returns true if any changed. */
+  async function retypeFavourites(m) {
+    let changed = false;
+    for (const f of m.favourites) {
+      if (!f.entity || f.entity.type === occ.type) continue;
+      let next = (f.alternatives || []).find((a) => a.type === occ.type);
+      if (!next && SEARCHABLE_TYPES.includes(occ.type)) {
+        try {
+          const r = await qloo.search(f.input, { types: [occ.type], take: 1, purpose: `re-resolve ${m.name}'s "${f.input}" as ${occ.type.split(':').pop()}` });
+          if (r.length) next = { id: r[0].id, name: r[0].name, type: r[0].type };
+        } catch { /* keep the original entity */ }
+      }
+      if (next) {
+        f.retypedFrom = { id: f.entity.id, name: f.entity.name, type: f.entity.type };
+        f.entity = { ...next, tags: [] };
+        changed = true;
+      }
+    }
+    if (changed) state.warnings.push(`Re-resolved ${m.name}'s favourites as ${occ.type.split(':').pop()} so Qloo could score them.`);
+    return changed;
   }
 
   /** Fairness ranking (pure computation, no Qloo call). */

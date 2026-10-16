@@ -13,9 +13,8 @@
   // Workers AI (free allocation). The model must support function calling.
   "ai": { "binding": "AI", "remote": true },
   // KV used only for the hard daily LLM-call cap. In `wrangler dev` this is simulated locally.
-  // Before deploying: `wrangler kv namespace create CAP_KV` and paste the id here.
   "kv_namespaces": [
-    { "binding": "CAP_KV", "id": "00000000000000000000000000000000" }
+    { "binding": "CAP_KV", "id": "95d2c40440f749d68fb329f24df5ca3c" }
   ],
   "vars": {
     "QLOO_BASE_URL": "https://hackathon.api.qloo.com",
