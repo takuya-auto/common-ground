@@ -5,7 +5,7 @@ import { runAgent, validateRequest } from '../src/agent/agent.js';
 const body = JSON.parse(process.argv[2] || JSON.stringify({
   members: [
     { name: 'Dana', favourites: ['Radiohead', 'Parasite', 'Bon Iver'] },
-    { name: 'Marco', favourites: ['Taylor Swift', 'The Office', 'Pizza'] },
+    { name: 'Marco', favourites: ['Taylor Swift', 'The Office', 'Ted Lasso'] },
     { name: 'Yuki', favourites: ['Miles Davis', 'Kiku', 'Haruki Murakami'] },
   ],
   occasion: 'dinner',

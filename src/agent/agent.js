@@ -275,6 +275,8 @@ async function narrate({ result, state, llm, llmInfo }) {
 Rules:
 - Use ONLY the facts below: sat (satisfaction 0-1), level, driverNames (the member's own favourites that Qloo linked to this pick), sharedTags, regret. Never invent venues, dishes, plots, prices or facts.
 - Speak to each member in second person, but do NOT open with "You, Name". Vary the phrasing. One sentence, two at most. Name at least one driver favourite when available.
+- Write natural English. Never use the words "driver", "level", "happy", "sat" or "regret" in the text; those are field names, not words for the reader. Say the satisfaction as a whole-number percentage (e.g. 94%, never 94.5%).
+- Good example: "Your love of Bon Iver and Radiohead is what Qloo connects this film to: a strong 95% fit." Bad example: "Bon Iver is a driver, you're happy."
 - If level is "compromises", say so kindly and what they give up (their regret vs their own top pick). If "okay", be honest that it is a fair-but-not-perfect fit.
 - Cover EVERY pick and EVERY member. Keep each text under 200 characters.
 Return ONLY JSON, no prose: {"summary": "<one sentence for the whole group>", "picks": [{"id": "<pick id>", "headline": "<one sentence>", "perMember": {"<member id>": "<text>"}}]}
@@ -302,7 +304,11 @@ async function llmOnlyComparison({ request, occasion, llm, llmInfo }) {
   if (!llm || !(await llm.available())) {
     return { available: false, reason: llm ? llm.lastReason : 'no LLM configured' };
   }
-  const prompt = `A group needs a ${occasion.label.toLowerCase()}${request.location ? ` in ${request.location}` : ''}. Constraints: ${JSON.stringify(request.constraints)}.
+  // Same inputs the agent actually used: location and food/budget filters only apply to places.
+  const isPlace = occasion.type === 'urn:entity:place';
+  const where = isPlace && request.location ? ` in ${request.location}` : '';
+  const constraints = isPlace ? request.constraints : { family: !!request.constraints?.family };
+  const prompt = `A group needs a ${occasion.label.toLowerCase()}${where}. Constraints: ${JSON.stringify(constraints)}.
 Members and favourites:\n${request.members.map((m) => `- ${m.name}: ${m.favourites.join(', ')}`).join('\n')}
 Suggest 3 specific ${occasion.unit}s and one sentence each on why. Return ONLY JSON: {"picks":[{"name":"...","reason":"..."}]}`;
   try {

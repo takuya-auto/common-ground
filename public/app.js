@@ -27,8 +27,8 @@
     location: 'Tokyo',
     members: [
       { name: 'Dana', favourites: ['Radiohead', 'Parasite', 'Bon Iver'] },
-      { name: 'Marco', favourites: ['Taylor Swift', 'The Office', 'Pizza'] },
-      { name: 'Yuki', favourites: ['Miles Davis', 'Haruki Murakami', 'Sushi'] },
+      { name: 'Marco', favourites: ['Taylor Swift', 'The Office', 'Ted Lasso'] },
+      { name: 'Yuki', favourites: ['Miles Davis', 'Haruki Murakami', 'Spirited Away'] },
     ],
     constraints: { budget: 'medium', dietary: ['vegetarian'] },
   };

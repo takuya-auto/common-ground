@@ -3,6 +3,8 @@
 **A group taste mediator agent, grounded in Qloo's taste graph.**
 Built for the Qloo Agentic Hackathon 2026.
 
+**Live demo:** https://common-ground.zaresusan1.workers.dev (live Qloo API; click "Load an example group", then "Find common ground". A run takes 20–60 s.)
+
 Three friends, one dinner, three different tastes. A generic LLM says
 "something for everyone" and means nothing. Common Ground resolves each
 person's favourites to entities in Qloo's taste graph, asks Qloo how every
@@ -19,7 +21,7 @@ family-friendly.
 
 | Step | What Qloo provides | Endpoint |
 | --- | --- | --- |
-| Resolve "Radiohead", "Parasite", "Pizza" into typed entities with tags | `/search` with `types` hints |
+| Resolve "Radiohead", "Parasite", "Ted Lasso" into typed entities with tags | `/search` with `types` hints |
 | Turn "vegetarian" or "wheelchair" into real filter tags | `/v2/tags` with `filter.query`, `filter.parents.types` |
 | Candidates for the whole group and for each person alone (so minority tastes get candidates too) | `/v2/insights` with `signal.interests.entities`, `filter.type`, `filter.location.query`, `filter.tags`, `filter.price_level.max`, `filter.content_rating` |
 | **Per-person affinity for every pooled candidate** and *which favourite drove it* | `/v2/insights` with `filter.results.entities` + `feature.explainability=true` |
@@ -117,8 +119,8 @@ Try it with curl:
 curl -s http://127.0.0.1:8787/api/plan -H 'content-type: application/json' -d '{
   "members": [
     {"name": "Dana",  "favourites": ["Radiohead", "Parasite", "Bon Iver"]},
-    {"name": "Marco", "favourites": ["Taylor Swift", "The Office", "Pizza"]},
-    {"name": "Yuki",  "favourites": ["Miles Davis", "Haruki Murakami", "Sushi"]}
+    {"name": "Marco", "favourites": ["Taylor Swift", "The Office", "Ted Lasso"]},
+    {"name": "Yuki",  "favourites": ["Miles Davis", "Haruki Murakami", "Spirited Away"]}
   ],
   "occasion": "dinner", "location": "Tokyo",
   "constraints": {"budget": "medium", "dietary": ["vegetarian"]},
