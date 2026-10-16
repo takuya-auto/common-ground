@@ -92,7 +92,7 @@ export function createQlooClient({ apiKey, baseUrl = 'https://hackathon.api.qloo
       const params = buildInsightsParams(type, opts);
       const data = await request('/v2/insights', params, { purpose: opts.purpose || `insights ${type}` });
       const entities = normalizeEntities(data.results?.entities || []);
-      return { entities, locality: data.query?.locality?.signal || null, explainability: data.query?.explainability || null };
+      return { entities, locality: localityOf(data), explainability: data.query?.explainability || null };
     },
   };
 }
@@ -110,11 +110,17 @@ function summarize(path, data) {
     const r = data.results?.entities || [];
     return {
       count: r.length,
-      locality: data.query?.locality?.signal?.name || null,
+      locality: localityOf(data)?.name || null,
       top: r.slice(0, 3).map((e) => ({ name: e.name, id: e.entity_id, affinity: e.query?.affinity })),
     };
   }
   return {};
+}
+
+// Live API returns the resolved place under query.localities.filter[0];
+// the mock uses query.locality.signal.
+function localityOf(data) {
+  return data.query?.localities?.filter?.[0] || data.query?.locality?.signal || null;
 }
 
 /** Normalize Qloo entity objects (search and insights have slightly different shapes). */

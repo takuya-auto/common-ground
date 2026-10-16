@@ -13,7 +13,7 @@ const body = JSON.parse(process.argv[2] || JSON.stringify({
   constraints: { budget: 'medium', dietary: ['vegetarian'], accessibility: [], family: false },
 }));
 const req = validateRequest(body);
-const qloo = createQlooClient({});
+const qloo = createQlooClient({ apiKey: process.env.QLOO_API_KEY });
 const result = await runAgent(req, { qloo, llm: null });
 console.log(JSON.stringify({
   mode: result.mode, summary: result.summary, tags: result.tags.map(t => t.id), relaxations: result.relaxations,
